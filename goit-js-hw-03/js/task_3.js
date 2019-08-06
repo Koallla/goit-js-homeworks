@@ -3,11 +3,11 @@
 function findBestEmployee(employees) {
   let name;
   let maxQuantityTasks = 0;
-  const entries = Object.entries(employees);
-  for (const entrie of entries) {
-    if (maxQuantityTasks < entrie[1]) {
-      maxQuantityTasks = entrie[1];
-      name = entrie[0];
+
+  for (const key in employees) {
+    if (maxQuantityTasks < employees[key]) {
+      maxQuantityTasks = employees[key];
+      name = key;
     }
   }
   return name;
