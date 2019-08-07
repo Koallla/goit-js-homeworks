@@ -7,11 +7,7 @@ function countTotalSalary(employees) {
     totalSalary += employees[value];
   }
 
-  // const values = Object.values(employees);
-  // for (const value of values) {
-  //   totalSalary += value;
-  // }
-  return `totalSalary: ${totalSalary}`;
+  return totalSalary;
 }
 
 console.log(countTotalSalary({})); // 0
