@@ -16,7 +16,7 @@ const account = {
    * Создает объект транзакции и вызывает addTransaction
    */
   deposit(amount) {
-    let id = this.transactions.length;
+    let id = new Date();
     const transaction = {
       id: id,
       type: 'deposit',
@@ -35,7 +35,7 @@ const account = {
    * о том, что снятие такой суммы не возможно, недостаточно средств.
    */
   withdraw(amount) {
-    let id = this.transactions.length;
+    let id = new Date();
     const transaction = {
       id: id,
       type: 'withdraw',
@@ -45,11 +45,10 @@ const account = {
     if (amount > this.balance) {
       alert('Cнятие такой суммы не возможно, недостаточно средств');
       return;
-    } else {
-      this.addTransaction(transaction);
-
-      this.balance -= amount;
     }
+    this.addTransaction(transaction);
+
+    this.balance -= amount;
   },
 
   /*
@@ -66,18 +65,22 @@ const account = {
    */
   getBalance() {
     console.log(this.balance);
-    return;
   },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
   getTransactionDetails(id) {
-    for (let i = 0; i < this.transactions.length; i += 1) {
-      const transactionsObject = this.transactions[i];
+    // for (let i = 0; i < this.transactions.length; i += 1) {
+    //   const transactionsObject = this.transactions[i];
+    //   console.log(this.transactions[i]);
+    //   if (transactionsObject === id) {
+    //     console.log(this.transactions[i]);
+    //     return;
 
-      if (transactionsObject.id === id) {
-        console.log(transactionsObject);
+    for (const idInTransaction of this.transactions) {
+      if (idInTransaction === id) {
+        console.log(idInTransaction);
         return;
       }
     }
@@ -101,10 +104,11 @@ const account = {
 };
 
 account.deposit(100);
-account.deposit(200);
+account.deposit(2200);
 account.withdraw(150);
 account.getBalance();
-account.getTransactionDetails(2);
+
+account.getTransactionDetails();
 account.getTransactionTotal('deposit');
 account.getBalance();
-account.withdraw(300);
+account.withdraw(3030);
