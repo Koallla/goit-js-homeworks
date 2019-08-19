@@ -1,21 +1,23 @@
 'use strict';
 
-const Storage = function(items) {
-  this.items = items;
-};
+class Storage {
+  constructor(items) {
+    this.items = items;
+  }
 
-Storage.prototype.getItems = function() {
-  return this.items;
-};
+  getItems() {
+    return this.items;
+  }
 
-Storage.prototype.addItem = function(item) {
-  this.items.push(item);
-};
+  addItem(item) {
+    this.items.push(item);
+  }
 
-Storage.prototype.removeItem = function(item) {
-  const findElement = this.items.indexOf(item);
-  this.items.splice(findElement, 1);
-};
+  removeItem(item) {
+    const findElement = this.items.indexOf(item);
+    this.items.splice(findElement, 1);
+  }
+}
 
 const storage = new Storage([
   'Нанитоиды',
