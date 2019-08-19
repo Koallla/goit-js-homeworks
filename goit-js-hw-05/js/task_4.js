@@ -6,21 +6,29 @@ class StringBuilder {
   }
 
   append(str) {
-    return str;
+    this._value = this._value + str;
+  }
+
+  prepend(str) {
+    this._value = str + this._value;
+  }
+
+  pad(str) {
+    this._value = str + this._value + str;
   }
 
   get value() {
     return this._value;
   }
-
-  //   prepend(str)
-
-  //   pad(str)
 }
 
 const builder = new StringBuilder('.');
 
+builder.append('^');
 console.log(builder.value);
 
-builder.append('^6dfsdf');
-// console.log(builder.append());
+builder.prepend('^');
+console.log(builder.value);
+
+builder.pad('=');
+console.log(builder.value);
