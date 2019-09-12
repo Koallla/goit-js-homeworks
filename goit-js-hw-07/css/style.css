@@ -1,0 +1,20 @@
+/* Task-03 */
+#gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+#gallery img {
+  width: 400px;
+  height: 270px;
+  display: flex;
+}
+
+/* Task-03 */
+
+/* Task-03 */
+
+/* Task-03 */
+
+/* Task-03 */
