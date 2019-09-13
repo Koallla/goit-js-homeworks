@@ -20,21 +20,15 @@ const images = [
 
 const ul = document.querySelector('#gallery');
 
-function createGallery(item) {
-  // const li = document.createElement('li');
-  // const img = document.createElement('img');
-  // img.src = `${url}`;
-  // img.alt = `${alt}`;
-  // li.appendChild(img);
-  return `<li><img src="${item.url}" alt="${item.alt}"><li>`;
+function createLi(item) {
+  return `<li> <img src="${item.url}" alt="${item.alt}"> <li>`;
 }
 
-// let string = '';
-
-const li = images.reduce((acc, item) => {
-  return acc + createGallery(item);
+const allLiInString = images.reduce((acc, item) => {
+  return acc + createLi(item);
 }, '');
 
-console.log(li);
+console.log(allLiInString);
 
-ul.insertAdjacentHTML('afterbegin', li);
+ul.insertAdjacentHTML('afterbegin', allLiInString);
+// Не пойму почему создается 6шт li.
