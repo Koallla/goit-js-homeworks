@@ -28,7 +28,5 @@ const allLiInString = images.reduce((acc, item) => {
   return acc + createLi(item);
 }, '');
 
-console.log(allLiInString);
-
 ul.insertAdjacentHTML('afterbegin', allLiInString);
 // Не пойму почему создается 6шт li.
