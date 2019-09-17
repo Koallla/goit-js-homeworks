@@ -6,5 +6,7 @@ let output = document.querySelector('#name-output');
 input.addEventListener('input', changeInput);
 
 function changeInput(event) {
-  output.textContent = event.currentTarget.value;
+  input.value === ''
+    ? (output.textContent = 'незнакомец')
+    : (output.textContent = event.currentTarget.value);
 }

@@ -21,11 +21,9 @@ const images = [
 const ul = document.querySelector('#gallery');
 
 function createLi(item) {
-  return `<li> <img src="${item.url}" alt="${item.alt}"> <li>`;
+  return `<li> <img src="${item.url}" alt="${item.alt}"> </li>`;
 }
 
-const allLiInString = images.reduce((acc, item) => {
-  console.log(acc + createLi(item));
-}, '');
+const allLiInString = images.map(item => createLi(item)).join(' ');
 
 ul.insertAdjacentHTML('afterbegin', allLiInString);
