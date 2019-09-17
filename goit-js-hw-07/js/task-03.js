@@ -21,12 +21,9 @@ const images = [
 const ul = document.querySelector('#gallery');
 
 function createLi(item) {
-  return `<li> <img src="${item.url}" alt="${item.alt}"> <li>`;
+  return `<li> <img src="${item.url}" alt="${item.alt}"> </li>`;
 }
 
-const allLiInString = images.reduce((acc, item) => {
-  return acc + createLi(item);
-}, '');
+const allLiInString = images.map(item => createLi(item)).join(' ');
 
 ul.insertAdjacentHTML('afterbegin', allLiInString);
-// Не пойму почему создается 6шт li.

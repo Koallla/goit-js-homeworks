@@ -1,9 +1,26 @@
 'use script';
 
-const menuItem = document.querySelectorAll('.item');
-console.log(menuItem);
+const menu = document.querySelector('#categories');
+const liItem = document.querySelectorAll('.item');
+let countCategoriesInMenu = menu.childElementCount;
 
-const arrayMenuItem = [...menuItem];
+function showElement() {
+  console.log(`Количество категорий в списке ${countCategoriesInMenu} шт`);
+  const arrayMenuItem = [...liItem];
 
-console.log(arrayMenuItem.map(el => el.querySelector('h2').textContent));
-console.log(arrayMenuItem.map(el => el.querySelectorAll('li')));
+  const arrayH2 = arrayMenuItem.map(el => el.querySelector('h2').textContent);
+
+  const countLiInliItem = arrayMenuItem.map(
+    el => el.querySelector('ul').childElementCount,
+  );
+
+  for (let i = 0; i < arrayH2.length; i += 1) {
+    console.log(`Категория: ${arrayH2[i]}`);
+  }
+
+  for (let i = 0; i < countLiInliItem.length; i += 1) {
+    console.log(`Количество элементов: ${countLiInliItem[i]}`);
+  }
+}
+
+showElement();
