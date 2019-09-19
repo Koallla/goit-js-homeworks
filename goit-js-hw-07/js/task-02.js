@@ -17,6 +17,10 @@ const createLi = text => {
   return li;
 };
 
-ingredients.forEach(item => {
-  ul.insertAdjacentElement('afterbegin', createLi(item));
+const arrayIngredients = [];
+
+const createIngredients = ingredients.forEach(item => {
+  arrayIngredients.push(createLi(item));
 });
+
+ul.prepend(...arrayIngredients);
