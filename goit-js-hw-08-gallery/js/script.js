@@ -51,6 +51,7 @@ const closeModal = event => {
     event.code === 'Escape'
   ) {
     lightbox.classList.remove('is-open');
+    lightboxImgSrc.src = ''; //Виталий, правильно я сделал?
   }
 };
 
