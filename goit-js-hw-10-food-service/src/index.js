@@ -18,18 +18,12 @@ checkBox.addEventListener('change', () => {
 
 function setTheme() {
   const currentTheme = localStorage.getItem('theme');
-  console.log(currentTheme);
-
   if (currentTheme === 'light') {
     checkBox.checked = false;
     body.classList.add('light-theme');
-
-    console.log(checkBox.checked);
   } else {
     checkBox.checked = true;
     body.classList.add('dark-theme');
-
-    console.log(checkBox.checked);
   }
 }
 
