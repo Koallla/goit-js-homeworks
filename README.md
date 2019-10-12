@@ -1,2 +1,1 @@
-# goit-js-homeworks
-HomeWorks
+# js-group-11-12
