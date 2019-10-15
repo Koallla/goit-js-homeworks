@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use strict';
 
 const refs = {
@@ -48,6 +49,8 @@ refs.stopBtn.addEventListener(
   changeColorBody.stop.bind(changeColorBody),
 );
 =======
+=======
+>>>>>>> d9566d7dec6f328a5a1ee03ccacf532184ae80d0
 'use strict';
 
 const colors = [
@@ -58,4 +61,7 @@ const colors = [
   '#009688',
   '#795548',
 ];
+<<<<<<< HEAD
 >>>>>>> add button
+=======
+>>>>>>> d9566d7dec6f328a5a1ee03ccacf532184ae80d0
