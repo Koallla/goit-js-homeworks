@@ -7,7 +7,7 @@ const lightbox = document.querySelector('.lightbox');
 const lightboxImgSrc = document.querySelector('.lightbox___image');
 const lightContetn = document.querySelector('.lightbox__content');
 const btnClose = document.querySelector('.material-icons');
-const img = document.querySelector('.gallery__image');
+const img = document.querySelectorAll('.gallery__item');
 
 function createLi(item) {
   return `<li class="gallery__item">
@@ -17,7 +17,8 @@ function createLi(item) {
     >
       <img
         class="gallery__image"
-        src="${item.preview}"
+        src=""
+        data-lazy="${item.preview}"
         
         data-source="${item.original}"
         alt="Tulips"
@@ -62,31 +63,33 @@ window.addEventListener('keyup', closeModal);
 // lazyLoad
 // ===================================================================================================
 
-// const lazyLoad = target => {
-//   const options = {
-//     rootMargin: '20px',
-//     threshold: 0.5,
-//   };
+const lazyLoad = target => {
+  const options = {
+    rootMargin: '50px',
+    threshold: 0.5,
+  };
 
-//   const io = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         const img = entry.target;
-//         const imageUrl = img.dataset.lazy;
-//         img.setAttribute('src', imageUrl);
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const i = entry.target;
+        console.log(i);
+        const imageUrl = i.dataset.lazy;
+        i.setAttribute('src', imageUrl);
+        console.log(entry.src);
 
-//         // img.classList.add('is-open');
+        // img.classList.add('is-open');
 
-//         observer.disconnect();
-//       }
-//     });
-//   }, options);
+        // observer.disconnect();
+      }
+    });
+  }, options);
 
-//   io.observe(target);
-// };
+  io.observe(target);
+};
 
 // const images = document.querySelectorAll('.gallery__image');
 
-// images.forEach(image => {
-//   lazyLoad(image);
-// });
+img.forEach(image => {
+  lazyLoad(image);
+});
