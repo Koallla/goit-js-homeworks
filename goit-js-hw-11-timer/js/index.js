@@ -48,7 +48,7 @@ const timer = new CountdownTimer(
   {
     selector: '#timer-1',
   },
-  { targetDate: new Date('Oct 21 2019 19:20:00') },
+  { targetDate: new Date('Oct 22 2019 19:20:00') },
 );
 
 timer.start();
