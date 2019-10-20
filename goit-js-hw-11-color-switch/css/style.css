@@ -1,4 +1,4 @@
-/* body {
+body {
   height: 100vh;
   background: ;
   text-align: center;
@@ -16,4 +16,5 @@ button {
   position: relative;
   box-sizing: border-box;
   transition: all 500ms ease;
-} */
+  border: 4px double rgb(255, 255, 255);
+}

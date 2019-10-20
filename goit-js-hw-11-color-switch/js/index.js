@@ -3,7 +3,7 @@
 const refs = {
   startBtn: document.querySelector('button[data-action="start"'),
   stopBtn: document.querySelector('button[data-action="stop"'),
-  head: document.querySelector('head'),
+  body: document.querySelector('body'),
 };
 
 const colors = [
@@ -28,7 +28,7 @@ const changeColorBody = {
     this.isActive = true;
     this.timerId = setInterval(() => {
       const randomColor = randomIntegerFromInterval(0, 5);
-      refs.head.innerHTML = `<style>body {background: ${colors[randomColor]}}</style>`;
+      refs.body.style.background = `${colors[randomColor]}`;
     }, 1000);
   },
 
