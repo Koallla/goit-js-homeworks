@@ -14,10 +14,16 @@ class CountdownTimer {
   }
 
   start() {
-    setInterval(() => {
+    this.selector = setInterval(() => {
       const currentTime = Date.now();
       this.time = this.targetDate - currentTime;
       updateClockface(this.time);
+
+      if (this.time <= 0) {
+        clearInterval(this.selector);
+        updateClockface(0);
+        return;
+      }
     }, 1000);
   }
 }
@@ -47,7 +53,7 @@ const timer = new CountdownTimer(
   {
     selector: '#timer-1',
   },
-  { targetDate: new Date('Oct 22 2019 19:20:00') },
+  { targetDate: new Date('Oct 24 2019 20:00:00') },
 );
 
 timer.start();
