@@ -48,7 +48,9 @@
   "dependencies": {
     "basiclightbox": "^5.0.2",
     "handlebars": "^4.4.2",
+    "lodash.debounce": "^4.0.8",
     "notyf": "^3.0.4",
+    "pnotify": "^4.0.0",
     "siema": "^1.5.1"
   }
 }
