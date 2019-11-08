@@ -9,7 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "",
+  "homepage": "https://github.com/Koallla/goit-js-homeworks",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Koallla/goit-js-homeworks.git"
