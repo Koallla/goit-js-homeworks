@@ -1,2 +1,0 @@
-# goit-js-homeworks
-HomeWorks
