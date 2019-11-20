@@ -1,6 +1,10 @@
 import template from '../templates/country-data.hbs';
 import country from '../templates/country-list.hbs';
 import PNotify from '../../node_modules/pnotify/dist/es/PNotify';
+import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
+import 'pnotify/dist/PNotifyBrightTheme.css';
+
+PNotify.defaults.styling = 'material';
 
 const sectionCountry = document.querySelector('#country');
 const input = document.querySelector('.search-form');
